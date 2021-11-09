@@ -1,0 +1,443 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="keywords" content="htmlcss bootstrap menu, navbar, offcanvas, sidebar nav menu CSS examples" />
+<meta name="description" content="Bootstrap 5 navbar make offcanvas on responsive mobile" />  
+
+<title>Teste - site  Fique por dentro de todas Novidades!</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+
+
+<link rel="stylesheet" href="assests/custon.css" type="text.css">
+<style type="text/css">
+body{
+	background: #fff;
+}
+
+body.offcanvas-active{
+	overflow:hidden;
+}
+
+.offcanvas-header{ display:none; }
+
+.screen-darken{
+	height: 100%;
+	width:0%;
+	z-index: 30;
+	position: fixed;
+	top: 0;
+	right: 0;
+	opacity:0;
+	visibility:hidden;
+	background-color: rgba(34, 34, 34, 0.6);
+	transition:opacity .2s linear, visibility 0.2s, width 2s ease-in;
+}
+
+.screen-darken.active{
+	z-index:10; 
+	transition:opacity .3s ease, width 0s;
+    opacity:1;
+    width:100%;
+    visibility:visible;
+}
+
+/* ============ mobile view ============ */
+@media all and (max-width: 991px) {
+	
+	.offcanvas-header{ display:block; }
+
+	.mobile-offcanvas{
+		visibility: hidden;
+		transform:translateX(-100%);
+	    border-radius:0; 
+		display:block;
+	    position: fixed;
+	    top: 0; left:0;
+	    height: 100%;
+	    z-index: 1200;
+	    width:80%;
+	    overflow-y: scroll;
+	    overflow-x: hidden;
+	    transition: visibility .3s ease-in-out, transform .3s ease-in-out;
+	}
+
+	.mobile-offcanvas.show{
+		visibility: visible;
+    	transform: translateX(0);
+	}
+	.mobile-offcanvas .container, .mobile-offcanvas .container-fluid{
+		display: block;
+	}
+
+}	
+/* ============ mobile view .end// ============ */
+
+.bg-1{
+	background: #f1f1f1;
+}
+
+.bg-2{
+	background-image: linear-gradient( #00ffb1, #0062ff);
+	margin-top: 5px;
+
+}
+
+.texto{
+	padding: 40px;
+	text-align: justify;
+}
+
+.texto2{
+	text-align: justify;
+}
+
+.menu{
+	background-image: linear-gradient(#00ffb1, #0062ff);
+}
+
+li > a .link{
+	color: black;
+}
+
+.rodape{
+	background: black;
+}
+
+.p-test{
+	float: left;
+	padding: 0px;
+	margin: 0;
+	margin-top: 10px;
+	color: white;
+	font-size: 12px;
+}
+
+
+.icon-rodape{
+	float: right;
+	padding: 0px;
+	margin: 0;
+	margin-top: 10px;
+}
+
+/*===============================================*/
+/*icones da rede social*/
+#social-platforms {
+        position: relative;
+        /*top: 100px;*/
+        /*top: 25vh;*/
+        font-size: 12px;
+        text-align: center;
+       /* height: 250px;*/
+        overflow: hidden;
+      }
+
+      /*Pen code from this point on*/
+      .btn {
+        clear: both;
+        white-space: nowrap;
+        font-size: 0.8em;
+        display: inline-block;
+        border-radius: 5px;
+        box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.35);
+        margin: 2px;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        transition: all 0.5s;
+        overflow: hidden;
+      }
+
+      .btn:hover {
+        box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.45);
+      }
+
+      .btn:focus {
+        box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.4);
+      }
+
+      .btn > span,
+      .btn-icon > i {
+        float: left;
+        padding: 8px;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        transition: all 0.5s;
+        line-height: 1em;
+      }
+
+      .btn > span {
+        padding: 8px 11px 10px;
+        white-space: nowrap;
+        color: #fff;
+        background: #b8b8b8;
+      }
+
+      .btn:focus > span {
+        background: #9a9a9a;
+      }
+
+      .btn-icon > i {
+        border-radius: 2px 0 0 2px;
+        position: relative;
+        width: 25px;
+        text-align: center;
+        font-size: 1.25em;
+        color: #fff;
+        background: #212121;
+      }
+
+      .btn-icon > i:after {
+        content: "";
+        border: 6px solid;
+        border-color: transparent transparent transparent #222;
+        position: absolute;
+        top: 8px;
+        right: -11px;
+      }
+
+      .btn-icon:hover > i,
+      .btn-icon:focus > i {
+        color: #fff;
+      }
+
+      .btn-icon > span {
+        border-radius: 0 2px 2px 0;
+      }
+
+      /*Facebook*/
+      .btn-facebook:hover > i,
+      .btn-facebook:focus > i {
+        color: #3b5998;
+      }
+
+      .btn-facebook > span {
+        background: #3b5998;
+      }
+
+      /*Twitter*/
+      .btn-twitter:hover > i,
+      .btn-twitter:focus > i {
+        color: #55acee;
+      }
+
+      .btn-twitter > span {
+        background: #55acee;
+      }
+
+      /*Google*/
+      .btn-googleplus:hover > i,
+      .btn-googleplus:focus > i {
+        color: #dd4b39;
+      }
+
+      .btn-googleplus > span {
+        background: #dd4b39;
+      }
+
+      /*Pinterest*/
+      .btn-pinterest:hover > i,
+      .btn-pinterest:focus > i {
+        color: #cb2028;
+      }
+
+      .btn-pinterest > span {
+        background: #cb2028;
+      }
+
+      /*LinkedIn*/
+      .btn-linkedin:hover > i,
+      .btn-linkedin:focus > i {
+        color: #007bb6;
+      }
+
+      .btn-linkedin > span {
+        background: #007bb6;
+      }
+/*===============================================*/
+
+</style>
+</head>
+<body>
+
+<span class="screen-darken"></span>
+
+
+
+
+<button data-trigger="navbar_main" class="d-lg-none btn btn-warning" type="button"> Menu </button>
+
+<!-- ============= COMPONENT ============== -->
+<nav id="navbar_main" class="mobile-offcanvas navbar navbar-expand-lg navbar-dark bg-primary menu">
+ <div class="container-fluid">
+    <div class="offcanvas-header">  
+		<button class="btn-close float-end"></button>
+	</div>
+    <a class="navbar-brand" href="#"><img src="img/Grupo 189.svg" alt=""></a>
+
+	
+	<ul class="navbar-nav ms-auto">
+
+		<li class="nav-item active"><a href="#" class="nav-link link">Home</a></li>
+		<li class="nav-item"><a href="#" class="nav-link">Quem Somos</a></li>
+		<li class="nav-item dropdown">
+			<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Portefólio</a>
+			<ul class="dropdown-menu">
+				<li><a href="#" class="dropdown-item"> submenu 1</a></li>
+				<li><a href="#" class="dropdown-item"> submenu 2</a></li>
+				<li><a href="#" class="dropdown-item"> submenu 3</a></li>
+			</ul>
+		</li>
+		<li class="nav-item"><a href="" class="nav-link">Contato</a></li>
+	</ul>
+ </div> <!-- container-fluid.// -->
+</nav>
+<!-- ============= COMPONENT END// ============== -->
+<img src="img/img1.png" alt="" class="img-fluid">
+
+
+<h1 class="text-center">Serviços</h1>
+<main class="container-fluid">
+	<div class="container-fluid ">
+		<div class="row">
+			<div class="col-sm-4">
+				<h4 class="text-center"> <img src="img/gp-3.png" alt=""> <br> <br> </h4>
+				<p  class="texto2"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero nihil dolores pariatur officia atque omnis quam qui. Commodi incidunt ab expedita modi possimus. Tempore hic,doloribus perspiciatis omnis nostrum ut.</p>
+			</div>
+			<div class="col-sm-4">
+	
+				<h4 class="text-center"><img src="img/gp-2.png" alt=""> <br> <br></h4>
+				<p  class="texto2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque amet, temporibus atque quis ipsam vel
+					quisquam ullam cupiditate illum nostrum laborum soluta distinctio id libero optio nihil accusamus
+					reprehenderit aut.</p>
+			</div>
+			<div class="col-sm-4">
+	
+				<h4 class="text-center"><img src="img/gp-1.png" alt=""> <br> <br></h4>
+				<p  class="texto2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic incidunt a voluptates dicta porro possimus
+					provident harum labore nemo! Non minus neque enim provident iste reprehenderit molestias ducimus
+					accusamus impedit.</p>
+			</div>
+		</div>
+	</div>
+	<br>
+	<br>
+	<div class="container-fluid bg-1">
+		<div class="row">
+			<div class="col-sm-4">
+				<h4 class="text-center"><img src="img/gp-6.png" alt="" width="300px" height="200px"><br><br></h4>
+				<p  class="texto2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero nihil dolores pariatur officia atque
+					omnis quam
+					qui. Commodi incidunt ab expedita modi possimus. Tempore hic, doloribus perspiciatis omnis nostrum ut.
+				</p>
+				<button type="button" class="btn btn-primary btn-sm">ler mais</button>
+				<br>
+			</div>
+			<br>
+			<div class="col-sm-4">
+				<h4 class="text-center"><img src="img/gp-5.png" alt="" width="300px" height="200px"><br><br></h4>
+				<p class="texto2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque amet, temporibus atque quis ipsam vel
+					quisquam
+					ullam cupiditate illum nostrum laborum soluta distinctio id libero optio nihil accusamus reprehenderit
+					aut.</p>
+				<button type="button" class="btn btn-primary btn-sm">ler mais</button>
+				<br>
+			</div>
+			<br>
+			<div class="col-sm-4">
+				<h4 class="text-center"><img src="img/gp-4.png" alt="" width="300px" height="200px"> <br><br></h4>
+				<p class="texto2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic incidunt a voluptates dicta porro
+					possimusprovident harum labore nemo! Non minus neque enim provident iste reprehenderit molestias ducimus
+					accusamus impedit.</p>
+				<button type="button" class="btn btn-primary btn-sm">ler mais</button>
+			</div>
+			<br>
+		</div>
+	
+	</div>
+</main>
+
+<div class="container-fluid bg-2">
+	
+	<h1 class=" container-md"><u> Lorem ipsum dolor sit amet consectetur adipisicing elit.</u></h1>
+	<p class="texto2 container-md">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et, quibusdam quod. Itaque recusandae quae est excepturi. Blanditiis veritatis eos soluta reprehenderit? <br><br>
+	</p> 
+
+	<div class="d-grid gap-2 d-md-flex justify-content-md-end ">
+	<button class="btn btn-primary me-md-2 botao" type="button">Button <i class="bi bi-arrow-right"></i></button></div>
+		
+
+</div>
+
+<footer class="rodape">
+	<div class="container text-center">
+		<p class="p-test">Todos direitos reservados.</p>
+		<img src="img/Group 25.png" alt="" class="icon-rodape">
+		<div id="social-platforms">
+			<a class="btn btn-icon btn-facebook" href="#"><i class="fa fa-facebook"></i><span>Facebook</span></a>
+			<a class="btn btn-icon btn-twitter" href="#"><i class="fa fa-twitter"></i><span>Twitter</span></a>
+			<a class="btn btn-icon btn-googleplus" href="#"><i class="fa fa-google-plus"></i><span>Google+</span></a>
+			<a class="btn btn-icon btn-pinterest" href="#"><i class="fa fa-pinterest"></i><span>Pinterest</span></a>
+			<a class="btn btn-icon btn-linkedin" href="#"><i class="fa fa-linkedin"></i><span>LinkedIn</span></a>
+		</div>
+	</div>
+	
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/c842ad97f1.js" crossorigin="anonymous"></script>
+<script type="text/javascript">
+
+	function darken_screen(yesno){
+		if( yesno == true ){
+			document.querySelector('.screen-darken').classList.add('active');
+		}
+		else if(yesno == false){
+			document.querySelector('.screen-darken').classList.remove('active');
+		}
+	}
+	
+	function close_offcanvas(){
+		darken_screen(false);
+		document.querySelector('.mobile-offcanvas.show').classList.remove('show');
+		document.body.classList.remove('offcanvas-active');
+	}
+
+	function show_offcanvas(offcanvas_id){
+		darken_screen(true);
+		document.getElementById(offcanvas_id).classList.add('show');
+		document.body.classList.add('offcanvas-active');
+	}
+
+	document.addEventListener("DOMContentLoaded", function(){
+		document.querySelectorAll('[data-trigger]').forEach(function(everyelement){
+			
+			let offcanvas_id = everyelement.getAttribute('data-trigger');
+			
+			everyelement.addEventListener('click', function (e) {
+				e.preventDefault();
+	        	show_offcanvas(offcanvas_id);
+	  			
+			});
+		});
+
+		document.querySelectorAll('.btn-close').forEach(function(everybutton){
+			
+			everybutton.addEventListener('click', function (e) {
+				e.preventDefault();
+	        	close_offcanvas();
+	  		});
+		});
+
+		document.querySelector('.screen-darken').addEventListener('click', function(event){
+			close_offcanvas();
+		});
+		
+    }); 
+	// DOMContentLoaded  end
+</script>
+</body>
+</html>
